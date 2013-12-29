@@ -1,0 +1,134 @@
+
+@import 'nib'
+
+dark       = #333
+darkBlue   = #465366
+light      = #B0A299
+red        = #ee3366
+green      = #06BC73
+yellow     = #F0E6C7
+darkYellow = #595552
+orange     = #D19864
+
+*
+  box-sizing border-box
+
+html
+  font 130%/1.5 'ratio'
+  background darkYellow
+
+body
+  margin 1rem auto
+  padding 0 0.4rem
+  max-width 22rem 
+
+  color dark
+
+h1
+  margin: 1rem 0
+
+  color darken(dark, 10%)
+  font-size 2.5rem
+  font-weight 200
+
+  i
+    font-size 2.2rem
+    position relative
+    top 0.3rem
+    margin 0 0.6rem 0 1rem
+
+table.todos
+  background yellow
+  width 100%
+  border-radius 0.2rem
+  overflow hidden
+
+  border-spacing: 0;
+
+  tr
+    
+    td
+      padding 0.2rem 0.4rem
+      border-bottom 1px dashed lighten(orange,40%)
+
+    td.editing
+      padding 0
+
+      input
+        margin 0
+        border-radius 0
+        &:hover, &:focus
+          box-shadow none
+
+    &:last-child td
+      border none
+
+    &:hover
+      background lighten(yellow, 30%) !important
+      cursor pointer
+    
+    &:nth-child(even)
+      background lighten(yellow, 10%)
+
+    &.done
+      color orange        
+
+    .icons
+      font-size 1.2rem
+      padding 2px 0.4rem 0
+      width 1px
+      white-space nowrap
+      cursor pointer
+      
+    .delete
+      color: red
+      &:hover
+        color lighten(red,20%)
+    .check
+      color green
+      &:hover
+        color: lighten(green,10%)
+          
+date
+  color lighten(orange,20%)
+  font-size 0.8rem
+  display inline-block
+  padding 0.2rem 0.5rem
+
+input
+  margin 0 0 1rem 0
+  padding 0.35rem 0.4rem
+  display block
+  width 100%
+  font-size 0.9rem
+  border-radius 0.2rem
+  border none
+
+  &:hover, &:focus
+    outline none
+    box-shadow 0 0 10px dark
+    &::-webkit-input-placeholder
+      color dark
+  
+  &::-webkit-input-placeholder
+    color light
+
+footer
+  margin 2rem 0
+  text-align center
+  font-size 0.7rem
+  letter-spacing 0.1rem
+  text-transform uppercase
+  color darken(dark,20%)
+  
+  span
+    position relative
+    display inline-block
+    top 2px
+    font-size 1.05rem
+    color darken(red,10%)
+    transition all 0.3s
+    &:hover
+      text-shadow 0 0 10px red
+      transform: scale(2,2);
+    

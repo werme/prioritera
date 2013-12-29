@@ -1,0 +1,18 @@
+
+<template name="todo">
+  <tr class="{{maybe_done}}" data-id='{{_id}}'>
+    {{#if editing}}
+      <td class="editing" colspan="2">
+        <input id="todo-edit" type="text" value="{{name}}" />
+      </td> 
+    {{else}}
+      <td class="todo">
+        {{name}}
+      </td>
+      <td class="icons">
+        <i class="check icon-tick"></i>
+        <i class="delete icon-times"></i>
+      </td>
+    {{/if}}
+  </tr>
+</template>

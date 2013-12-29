@@ -1,0 +1,39 @@
+
+<template name="todos">
+
+  <h1><i class="icon-book2"></i>prioritera</h1>
+
+  <input id="todo-new" type="text" placeholder="Your title here...">
+
+  <date>Today</date>
+  <table id="today" class="todos">
+    <tbody>
+    {{#each today}}
+      {{> todo}}
+    {{/each}}
+    </tbody>
+  </table>
+
+  <date>Tomorrow</date>
+  <table id="tomorrow" class="todos">
+    <tbody>
+    {{#each tomorrow}}
+      {{> todo}}
+    {{/each}}
+    </tbody>
+  </table>
+
+  <date>Future</date>
+  <table id="future" class="todos">
+    <tbody>
+    {{#each future}}
+      {{> todo}}
+    {{/each}}
+    </tbody>
+  </table>
+
+  <footer>
+    <p>Built with <span>&hearts;</span> by Olle Werme</p>
+  </footer>
+
+</template>
