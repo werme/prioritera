@@ -7,10 +7,6 @@ Template.todo.editing = function () {
   return Session.equals('editing_todo', this._id);
 };
 
-var update = function (id, name) {
-  Todos.update({_id: id}, { $set: { name: name } });
-};
-
 Template.todo.events({
   'click .check': function () {
     Todos.update(this._id, { $set: { done: !this.done } });
@@ -30,8 +26,12 @@ Template.todo.events({
   },
   'keypress #todo-edit': function (e, tmpl) {
     if (e.which === 13) {
-      update(this._id, tmpl.find("#todo-edit").value);
+      updateTodoName(this._id, tmpl.find("#todo-edit").value);
       Session.set('editing_todo', null);
     }
   }
 });
+
+var updateTodoName = function (id, name) {
+  Todos.update({_id: id}, { $set: { name: name } });
+};
